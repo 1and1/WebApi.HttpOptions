@@ -14,7 +14,7 @@ namespace WebApi.HttpOptions
     /// <summary>
     /// Handles HTTP OPTIONS requests and injects "Allow" headers into HTTP responses.
     /// </summary>
-    public class HttpOptionsMessageHandler : DelegatingHandler
+    public class HttpOptionsHandler : DelegatingHandler
     {
         protected override async Task<HttpResponseMessage> SendAsync(
             HttpRequestMessage request, CancellationToken cancellationToken)
