@@ -37,7 +37,8 @@ namespace WebApi.HttpOptions
 
         private static IEnumerable<HttpMethod> GetSupportedMethods(IHttpRouteData routeData)
         {
-            if (routeData.Values.ContainsKey("controller"))
+            if (routeData == null) return Enumerable.Empty<HttpMethod>();
+            else if (routeData.Values.ContainsKey("controller"))
             {
                 var apiExplorer = GlobalConfiguration.Configuration.Services.GetApiExplorer();
                 return apiExplorer.ApiDescriptions
@@ -49,7 +50,7 @@ namespace WebApi.HttpOptions
             else if (routeData.Values.ContainsKey("MS_SubRoutes"))
             {
                 return routeData.GetSubRoutes()
-                    .SelectMany(x => (HttpActionDescriptor[])x.Route.DataTokens["actions"])
+                    .SelectMany(x => (HttpActionDescriptor[]) x.Route.DataTokens["actions"])
                     .SelectMany(x => x.SupportedHttpMethods).Distinct();
             }
             else return Enumerable.Empty<HttpMethod>();
