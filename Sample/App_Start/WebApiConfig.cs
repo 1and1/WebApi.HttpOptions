@@ -8,6 +8,7 @@ namespace WebApi.HttpOptions.Sample
         {
             config.MapHttpAttributeRoutes();
             config.EnableHttpOptions();
+            config.EnableHttpHead();
         }
     }
 }

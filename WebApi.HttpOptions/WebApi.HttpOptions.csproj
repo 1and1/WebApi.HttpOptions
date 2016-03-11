@@ -66,6 +66,7 @@
     <Compile Include="..\GlobalAssemblyInfo.cs" />
     <Compile Include="AssemblyInfo.cs" />
     <Compile Include="HttpConfigurationExtensions.cs" />
+    <Compile Include="HttpHeadHandler.cs" />
     <Compile Include="HttpOptionsHandler.cs" />
     <None Include="packages.config" />
   </ItemGroup>

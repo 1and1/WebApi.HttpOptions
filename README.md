@@ -1,6 +1,6 @@
 # WebApi.HttpOptions
 
-WebApi.HttpOptions adds automatic handling for the HTTP `OPTIONS` verb and the `Allow` header to your [WebAPI](http://www.asp.net/web-api) applications.
+WebApi.HttpOptions adds automatic handling for the HTTP `OPTIONS` and `HEAD` verbs to your [WebAPI](http://www.asp.net/web-api) applications.
 
 NuGet package:
 * [WebApi.HttpOptions](https://www.nuget.org/packages/WebApi.HttpOptions/)
@@ -9,7 +9,9 @@ NuGet package:
 
 ## Usage
 
-Add `config.EnableHttpOptions();` to your `WebApiConfig.cs` file.
+Add `config.EnableHttpOptions();` to your `WebApiConfig.cs` file. Any URI that is configured to respond to other HTTP verbs will now also repsond to `HTTP OPTIONS` with an `Allow` header listing the available verbs.
+
+Add `config.EnableHttpHead();` to your `WebApiConfig.cs` file. Any URI that is configured to respond to `HTTP GET` will now also respond to `HTTP HEAD` with the same headers and no body.
 
 
 
