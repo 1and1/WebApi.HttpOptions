@@ -1,6 +1,6 @@
 ﻿using System.Web.Http;
 
-namespace WebApi.HttpOptions.Sample
+namespace HttpOptionsSample
 {
     public class WebApiApplication : System.Web.HttpApplication
     {

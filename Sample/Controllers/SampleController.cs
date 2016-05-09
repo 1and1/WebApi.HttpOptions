@@ -1,6 +1,6 @@
 ﻿using System.Web.Http;
 
-namespace WebApi.HttpOptions.Sample.Controllers
+namespace HttpOptionsSample.Controllers
 {
     public class SampleController : ApiController
     {
