@@ -64,6 +64,7 @@
     <Compile Include="HttpConfigurationExtensions.cs" />
     <Compile Include="HttpHeadHandler.cs" />
     <Compile Include="HttpOptionsHandler.cs" />
+    <Compile Include="CustomHeaderHandler.cs" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -13,6 +13,8 @@ Add `config.EnableHttpOptions();` to your `WebApiConfig.cs` file. Any URI that i
 
 Add `config.EnableHttpHead();` to your `WebApiConfig.cs` file. Any URI that is configured to respond to `HTTP GET` will now also respond to `HTTP HEAD` with the same headers and no body.
 
+Add `config.EnableVersionHeader();` to your `WebApiConfig.cs` file. All responses will now include an `X-YourApp-Version` header.
+
 
 
 ## Sample project

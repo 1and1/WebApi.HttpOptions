@@ -11,6 +11,7 @@ namespace HttpOptionsSample
 
             config.EnableHttpOptions();
             config.EnableHttpHead();
+            config.EnableVersionHeader();
 
             config.EnsureInitialized();
         }
