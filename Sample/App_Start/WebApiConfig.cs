@@ -9,9 +9,9 @@ namespace HttpOptionsSample
         {
             config.MapHttpAttributeRoutes();
 
+            config.EnableVersionHeader();
             config.EnableHttpOptions();
             config.EnableHttpHead();
-            config.EnableVersionHeader();
 
             config.EnsureInitialized();
         }
