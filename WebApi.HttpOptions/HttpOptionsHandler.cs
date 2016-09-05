@@ -37,7 +37,9 @@ namespace WebApi.HttpOptions
 
         private IEnumerable<HttpMethod> GetSupportedMethods(HttpRequestMessage request)
         {
-            var routeData = request.GetRouteData();
+            var routeData = request.GetRouteData()
+                // Workaround for OWIN support
+                ?? request.GetConfiguration().Routes.GetRouteData(request);
             if (routeData == null) return Enumerable.Empty<HttpMethod>();
             else if (routeData.Values.ContainsKey("controller"))
             {
