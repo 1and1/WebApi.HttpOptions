@@ -15,8 +15,10 @@ namespace WebApi.HttpOptions
             if (request.Method != HttpMethod.Head)
                 return await base.SendAsync(request, cancellationToken);
 
+            request.Properties["OriginalMethod"] = request.Method;
             request.Method = HttpMethod.Get;
             var response = await base.SendAsync(request, cancellationToken);
+
             if (response.Content != null)
             {
                 if (response.IsSuccessStatusCode) response.StatusCode = HttpStatusCode.NoContent;
@@ -31,6 +33,7 @@ namespace WebApi.HttpOptions
 
                 response.Content = content;
             }
+
             return response;
         }
     }
